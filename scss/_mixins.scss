@@ -1,0 +1,16 @@
+@use "funciones" as f;
+
+// Estilos comunes para botones
+@mixin boton($fondo, $texto, $vertical, $horizontal) {
+  padding: f.espacio($vertical) f.espacio($horizontal);
+  color: $texto;
+  background-color: $fondo;
+  line-height: 1.25;
+}
+
+// Media queries reutilizables
+@mixin responsive($ancho) {
+  @media (min-width: $ancho) {
+    @content;
+  }
+}

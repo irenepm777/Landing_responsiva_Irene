@@ -1,0 +1,45 @@
+/* Hoja alternativa: modo oscuro.
+   Sus reglas solo se aplican cuando el body tiene la clase .dark-mode (botón #btn-theme). */
+
+body.dark-mode {
+  color: #ffffff;
+  background-color: #02080b;
+  background-image: linear-gradient(to bottom, #123a52 0%, #0c2b3e 35%, #071c28 70%, #02080b 100%);
+}
+
+body.dark-mode::before {
+  opacity: 0.28;
+}
+
+body.dark-mode .nav-aqua {
+  border-bottom-color: rgba(255, 255, 255, 0.12);
+}
+
+body.dark-mode .nav-aqua .logo,
+body.dark-mode .nav-aqua .nav-link {
+  color: #ffffff;
+}
+
+body.dark-mode .nav-aqua .nav-link:hover {
+  color: #a6dded;
+}
+
+body.dark-mode .navbar-toggler {
+  background-color: #a6dded;
+}
+
+body.dark-mode .btn-tema {
+  border-color: #a6dded;
+  color: #a6dded;
+}
+
+body.dark-mode .btn-tema:hover {
+  color: #08222e;
+  background-color: #a6dded;
+}
+
+body.dark-mode .hero-etiqueta {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.08);
+}
