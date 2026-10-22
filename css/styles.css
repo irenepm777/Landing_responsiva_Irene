@@ -1,4 +1,3 @@
-/* Estilos generales */
 * {
   box-sizing: border-box;
 }
@@ -10,6 +9,30 @@ body {
   font-size: 0.9375rem;
   line-height: 1.5;
   color: #08222e;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 10rem;
+  background-image: url("../img/espuma.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.95;
+}
+@media (min-width: 768px) {
+  body::before {
+    height: 12.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  body::before {
+    height: 16.25rem;
+  }
 }
 
 h1,
@@ -34,59 +57,37 @@ img {
   padding-left: 1.75rem;
   padding-right: 1.75rem;
 }
-
-/* Espuma de la superficie, detrás del navbar y del hero */
-body::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 10rem;
-  background-image: url("../img/espuma.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  opacity: 0.95;
+@media (min-width: 768px) {
+  .contenedor {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 1200px) {
+  .contenedor {
+    padding-left: 7.5rem;
+    padding-right: 7.5rem;
+  }
 }
 
-/* Navbar de Bootstrap redefinido con la clase propia .nav-aqua */
-.nav-aqua {
-  min-height: 4rem;
-  border-bottom: 1px solid rgba(8, 34, 46, 0.08);
-}
-
-.nav-aqua .logo {
-  font-size: 1.25rem;
-  color: #12506b;
-}
-
-.nav-aqua .nav-link {
-  padding: 0.75rem 0;
-  color: #08222e;
-}
-
-.nav-aqua .nav-link:hover {
-  text-decoration: underline;
-}
-
-/* Botones propios */
 .btn-aqua {
   padding: 0.875rem 1.75rem;
-  color: #ffffff;
-  background-color: #0f5c78;
   font-size: 0.9375rem;
   line-height: 1.25;
+  color: #ffffff;
+  background-color: #0f5c78;
 }
-
 .btn-aqua:hover {
   color: #ffffff;
   background-color: #0b4a61;
 }
-
 .btn-aqua:active {
   background-color: #083a4d;
+}
+@media (min-width: 1200px) {
+  .btn-aqua {
+    font-size: 1.0625rem;
+  }
 }
 
 .btn-tema {
@@ -97,33 +98,122 @@ body::before {
   font-size: 0.875rem;
   line-height: 1.25;
 }
-
 .btn-tema:hover {
   color: #ffffff;
   background-color: #0f5c78;
 }
 
+.nav-aqua {
+  min-height: 4rem;
+  border-bottom: 1px solid rgba(8, 34, 46, 0.08);
+}
+@media (min-width: 1200px) {
+  .nav-aqua {
+    min-height: 4.75rem;
+  }
+}
+.nav-aqua .logo {
+  font-size: 1.25rem;
+  color: #12506b;
+}
+@media (min-width: 1200px) {
+  .nav-aqua .logo {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 768px) {
+  .nav-aqua .navbar-nav {
+    gap: 1.75rem;
+  }
+}
+@media (min-width: 1200px) {
+  .nav-aqua .navbar-nav {
+    gap: 2.25rem;
+  }
+}
+.nav-aqua .nav-link {
+  padding: 0.75rem 0;
+  color: #08222e;
+}
+.nav-aqua .nav-link:hover {
+  text-decoration: underline;
+}
+@media (min-width: 1200px) {
+  .nav-aqua .nav-link {
+    font-size: 1rem;
+  }
+}
 .nav-aqua .btn-aqua {
+  margin: 0.5rem 0;
   padding: 0.5625rem 1.125rem;
   font-size: 0.875rem;
-  margin: 0.5rem 0;
 }
-
+@media (min-width: 768px) {
+  .nav-aqua .btn-aqua {
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .nav-aqua .btn-aqua {
+    padding: 0.625rem 1.375rem;
+    font-size: 0.9375rem;
+  }
+}
 .nav-aqua .btn-tema {
   margin-bottom: 0.75rem;
 }
+@media (min-width: 768px) {
+  .nav-aqua .btn-tema {
+    margin: 0;
+  }
+}
 
-/* Hero */
 .hero {
   gap: 1.125rem;
   padding-top: 2.5rem;
 }
-
-.hero-etiqueta,
-.card-etiqueta {
-  font-size: 0.6875rem;
-  line-height: 1.2;
-  letter-spacing: 0.03125rem;
+@media (min-width: 768px) {
+  .hero {
+    gap: 1.375rem;
+    padding: 4rem 0 1.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero {
+    gap: 1.625rem;
+    padding: 6.875rem 0 4rem;
+  }
+}
+.hero h1 {
+  font-size: 1.75rem;
+  line-height: 1.1;
+}
+@media (min-width: 768px) {
+  .hero h1 {
+    max-width: 35rem;
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero h1 {
+    max-width: 47.5rem;
+    font-size: 3.5rem;
+  }
+}
+.hero p {
+  line-height: 1.45;
+}
+@media (min-width: 768px) {
+  .hero p {
+    max-width: 32.5rem;
+    font-size: 1.0625rem;
+  }
+}
+@media (min-width: 1200px) {
+  .hero p {
+    max-width: 37.5rem;
+    font-size: 1.125rem;
+  }
 }
 
 .hero-etiqueta {
@@ -131,22 +221,32 @@ body::before {
   border: 1px solid rgba(255, 255, 255, 0.32);
   color: #0f5c78;
   background-color: rgba(255, 255, 255, 0.16);
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.03125rem;
+}
+@media (min-width: 1200px) {
+  .hero-etiqueta {
+    font-size: 0.75rem;
+  }
 }
 
-.hero h1 {
-  font-size: 1.75rem;
-  line-height: 1.1;
-}
-
-.hero p {
-  line-height: 1.45;
-}
-
-/* Títulos de sección */
 .cards h2,
 .discover h2 {
   margin-bottom: 1.25rem;
   font-size: 1.375rem;
+}
+@media (min-width: 768px) {
+  .cards h2,
+  .discover h2 {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cards h2,
+  .discover h2 {
+    font-size: 2.125rem;
+  }
 }
 
 .subtitulo {
@@ -154,47 +254,73 @@ body::before {
   font-size: 0.875rem;
   line-height: 1.2;
 }
+@media (min-width: 1200px) {
+  .subtitulo {
+    font-size: 1rem;
+  }
+}
 
-/* Zonas */
 .cards {
   padding-top: 0.5rem;
 }
+@media (min-width: 768px) {
+  .cards {
+    padding-top: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .cards {
+    padding-top: 3rem;
+  }
+}
 
-/* Card de Bootstrap redefinida con la clase propia .card-zona */
+@media (min-width: 768px) {
+  .zona-baja {
+    margin-top: -6.875rem;
+  }
+}
+@media (min-width: 1200px) {
+  .zona-baja {
+    margin-top: -9.375rem;
+  }
+}
+
+.discover {
+  padding: 3.5625rem 0 4rem;
+}
+@media (min-width: 768px) {
+  .discover {
+    padding-top: 4rem;
+  }
+}
+@media (min-width: 1200px) {
+  .discover {
+    padding-top: 6rem;
+  }
+}
+
 .card-zona {
   max-width: 32.5rem;
   border-radius: 1.5rem;
   color: #08222e;
   box-shadow: 0 4px 12px rgba(8, 34, 46, 0.12);
 }
-
-.card-imagen {
-  width: 100%;
-  height: 10.625rem;
-  object-fit: cover;
-}
-
 .card-zona .card-body {
   padding: 1rem 1.25rem 1.25rem;
 }
-
-.card-etiqueta {
-  padding: 0.25rem 0.625rem;
-  color: #0f5c78;
-  background-color: #e7eef0;
-}
-
 .card-zona .card-title {
   font-size: 1.1875rem;
   line-height: 1.3;
 }
-
+@media (min-width: 1200px) {
+  .card-zona .card-title {
+    font-size: 1.25rem;
+  }
+}
 .card-zona ul {
   font-size: 0.875rem;
   line-height: 1.2;
 }
-
-/* Viñeta propia: escama en lugar del punto de la lista */
 .card-zona li {
   min-height: 1.1875rem;
   padding-left: 2rem;
@@ -203,31 +329,79 @@ body::before {
   background-repeat: no-repeat;
 }
 
+.card-imagen {
+  width: 100%;
+  height: 10.625rem;
+  object-fit: cover;
+}
+@media (min-width: 768px) {
+  .card-imagen {
+    height: 11.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .card-imagen {
+    height: 15rem;
+  }
+}
+
+.card-etiqueta {
+  padding: 0.25rem 0.625rem;
+  color: #0f5c78;
+  background-color: #e7eef0;
+  font-size: 0.6875rem;
+  line-height: 1.2;
+  letter-spacing: 0.03125rem;
+}
+
 .card-enlace {
   color: #12506b;
   font-size: 0.84375rem;
   line-height: 1.2;
   text-decoration: none;
 }
-
 .card-enlace:hover {
   color: #0b4a61;
   text-decoration: underline;
 }
-
 .card-enlace:active {
   color: #083a4d;
 }
 
-/* Galería */
-.discover {
-  padding: 3.5625rem 0 4rem;
-}
-
-/* Concha con el carrusel colocado en el hueco de la perla */
 .imagen-concha {
   max-width: 17.3125rem;
   margin-top: 2.5rem;
+}
+@media (min-width: 768px) {
+  .imagen-concha {
+    max-width: 21.619375rem;
+  }
+}
+@media (min-width: 1200px) {
+  .imagen-concha {
+    max-width: 26.8075rem;
+  }
+}
+.imagen-concha .ancla-flecha {
+  top: 57%;
+  bottom: auto;
+  width: 14.5%;
+  opacity: 1;
+}
+.imagen-concha .ancla-flecha:hover {
+  opacity: 0.75;
+}
+.imagen-concha .ancla-anterior {
+  left: -7%;
+}
+.imagen-concha .ancla-anterior img {
+  transform: rotate(90deg);
+}
+.imagen-concha .ancla-siguiente {
+  right: -7%;
+}
+.imagen-concha .ancla-siguiente img {
+  transform: rotate(-90deg);
 }
 
 .concha-foto {
@@ -236,62 +410,52 @@ body::before {
   width: 50.5%;
 }
 
-/* Flechas del carrusel de Bootstrap redefinidas como anclas */
-.imagen-concha .ancla-flecha {
-  top: 57%;
-  bottom: auto;
-  width: 14.5%;
-  opacity: 1;
-}
-
-.imagen-concha .ancla-flecha:hover {
-  opacity: 0.75;
-}
-
-.imagen-concha .ancla-anterior {
-  left: -7%;
-}
-
-.imagen-concha .ancla-anterior img {
-  transform: rotate(90deg);
-}
-
-.imagen-concha .ancla-siguiente {
-  right: -7%;
-}
-
-.imagen-concha .ancla-siguiente img {
-  transform: rotate(-90deg);
-}
-
-/* Footer */
 footer {
   z-index: 0;
   padding-top: 2.5rem;
   padding-bottom: 2rem;
   font-size: 0.84375rem;
 }
-
-/* Ancla decorativa al fondo del footer */
+@media (min-width: 768px) {
+  footer {
+    padding-top: 3.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  footer {
+    padding-top: 4rem;
+    padding-bottom: 2.5rem;
+  }
+}
 footer::after {
   content: "";
   position: absolute;
-  right: -3.5rem;
-  bottom: -1.75rem;
   z-index: -1;
   width: 12.25rem;
   height: 12.25rem;
   background-image: url("../img/ancla.png");
   background-size: contain;
   background-repeat: no-repeat;
+  right: -3.5rem;
+  bottom: -1.75rem;
   opacity: 0.2;
   transform: rotate(27deg);
 }
-
+@media (min-width: 768px) {
+  footer::after {
+    right: 3rem;
+    bottom: -2rem;
+  }
+}
+@media (min-width: 1200px) {
+  footer::after {
+    right: 7.5rem;
+    bottom: -1rem;
+  }
+}
 footer a {
   color: #ffffff;
 }
-
 footer a:hover {
   color: #a6dded;
 }
@@ -299,30 +463,24 @@ footer a:hover {
 .footer-info {
   max-width: 37.5rem;
 }
-
 .footer-info h3 {
   margin-bottom: 1.125rem;
   font-size: 1.125rem;
 }
-
-.footer-info p,
-.footer-bottom {
+.footer-info p {
   color: rgba(255, 255, 255, 0.62);
 }
-
-.footer-info address,
-.footer-redes {
-  margin: 1.125rem 0 0;
-}
-
 .footer-info address {
+  margin: 1.125rem 0 0;
   line-height: 1.6;
 }
-
 .footer-info address p {
   color: rgba(255, 255, 255, 0.8);
 }
 
+.footer-redes {
+  margin: 1.125rem 0 0;
+}
 .footer-redes a {
   margin-right: 1rem;
 }
@@ -332,174 +490,7 @@ footer a:hover {
   padding-top: 1.125rem;
   border-top: 1px solid rgba(255, 255, 255, 0.15);
   font-size: 0.71875rem;
+  color: rgba(255, 255, 255, 0.62);
 }
 
-/* Tablet (md, desde 768px) */
-@media (min-width: 768px) {
-  .contenedor {
-    padding-left: 3rem;
-    padding-right: 3rem;
-  }
-
-  body::before {
-    height: 12.5rem;
-  }
-
-  .nav-aqua .navbar-nav {
-    gap: 1.75rem;
-  }
-
-  .nav-aqua .btn-aqua,
-  .nav-aqua .btn-tema {
-    margin: 0;
-  }
-
-  .hero {
-    padding: 4rem 0 1.5rem;
-    gap: 1.375rem;
-  }
-
-  .hero h1 {
-    max-width: 35rem;
-    font-size: 2.5rem;
-  }
-
-  .hero p {
-    max-width: 32.5rem;
-    font-size: 1.0625rem;
-  }
-
-  .cards {
-    padding-top: 2.5rem;
-  }
-
-  .cards h2,
-  .discover h2 {
-    font-size: 1.75rem;
-  }
-
-  /* La 2.ª y 3.ª card suben para formar el zigzag */
-  .zona-baja {
-    margin-top: -6.875rem;
-  }
-
-  .card-imagen {
-    height: 11.25rem;
-  }
-
-  .discover {
-    padding-top: 4rem;
-  }
-
-  .imagen-concha {
-    max-width: 21.619375rem;
-  }
-
-  footer {
-    padding-top: 3.5rem;
-  }
-
-  footer::after {
-    right: 3rem;
-    bottom: -2rem;
-  }
-}
-
-/* Escritorio (xl, desde 1200px) */
-@media (min-width: 1200px) {
-  .contenedor {
-    padding-left: 7.5rem;
-    padding-right: 7.5rem;
-  }
-
-  body::before {
-    height: 16.25rem;
-  }
-
-  .nav-aqua {
-    min-height: 4.75rem;
-  }
-
-  .nav-aqua .logo {
-    font-size: 1.5rem;
-  }
-
-  .nav-aqua .navbar-nav {
-    gap: 2.25rem;
-  }
-
-  .nav-aqua .nav-link {
-    font-size: 1rem;
-  }
-
-  .btn-aqua {
-    font-size: 1.0625rem;
-  }
-
-  .nav-aqua .btn-aqua {
-    padding: 0.625rem 1.375rem;
-    font-size: 0.9375rem;
-  }
-
-  .hero {
-    padding: 6.875rem 0 4rem;
-    gap: 1.625rem;
-  }
-
-  .hero-etiqueta {
-    font-size: 0.75rem;
-  }
-
-  .hero h1 {
-    max-width: 47.5rem;
-    font-size: 3.5rem;
-  }
-
-  .hero p {
-    max-width: 37.5rem;
-    font-size: 1.125rem;
-  }
-
-  .cards {
-    padding-top: 3rem;
-  }
-
-  .cards h2,
-  .discover h2 {
-    font-size: 2.125rem;
-  }
-
-  .subtitulo {
-    font-size: 1rem;
-  }
-
-  .zona-baja {
-    margin-top: -9.375rem;
-  }
-
-  .card-imagen {
-    height: 15rem;
-  }
-
-  .card-zona .card-title {
-    font-size: 1.25rem;
-  }
-
-  .imagen-concha {
-    max-width: 26.8075rem;
-  }
-
-  .discover {
-    padding-top: 6rem;
-  }
-
-  footer {
-    padding-top: 4rem;
-    padding-bottom: 2.5rem;
-  }
-
-  footer::after {
-    right: 7.5rem;
-    bottom: -1rem;
-  }
-}
+/*# sourceMappingURL=styles.css.map */
