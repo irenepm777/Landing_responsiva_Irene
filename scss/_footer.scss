@@ -1,0 +1,87 @@
+@use "index" as *;
+
+footer {
+  z-index: 0;
+  padding-top: rem(40);
+  padding-bottom: rem(32);
+  font-size: rem(13.5);
+
+  @include up(md) {
+    padding-top: rem(56);
+  }
+
+  @include up(xl) {
+    padding-top: rem(64);
+    padding-bottom: rem(40);
+  }
+
+  // Ancla decorativa del footer
+  &::after {
+    @include decoracion("ancla.png", rem(196));
+
+    right: rem(-56);
+    bottom: rem(-28);
+    opacity: 0.2;
+    transform: rotate(27deg);
+
+    @include up(md) {
+      right: rem(48);
+      bottom: rem(-32);
+    }
+
+    @include up(xl) {
+      right: rem(120);
+      bottom: rem(-16);
+    }
+  }
+
+  // Enlaces
+  a {
+    color: $white;
+
+    &:hover {
+      color: $sky;
+    }
+  }
+}
+
+// Información principal
+.footer-info {
+  max-width: rem(600);
+
+  h3 {
+    margin-bottom: rem(18);
+    font-size: rem(18);
+  }
+
+  p {
+    color: with-alpha($white, 0.62);
+  }
+
+  address {
+    margin: rem(18) 0 0;
+    line-height: 1.6;
+
+    p {
+      color: with-alpha($white, 0.8);
+    }
+  }
+}
+
+// Redes sociales
+.footer-redes {
+  margin: rem(18) 0 0;
+
+  a {
+    margin-right: rem(16);
+  }
+}
+
+// Parte inferior del footer
+.footer-bottom {
+  margin-top: rem(18);
+  padding-top: rem(18);
+  border-top: 1px solid with-alpha($white, 0.15);
+  font-size: rem(11.5);
+  color: with-alpha($white, 0.62);
+}

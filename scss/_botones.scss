@@ -1,0 +1,34 @@
+@use "index" as *;
+
+// Botón principal
+.btn-aqua {
+  padding: rem(14) rem(28);
+  font-size: rem(15);
+  line-height: 1.25;
+
+  @include boton(
+    $primary,
+    $white,
+    $primary-hover,
+    $primary-active
+  );
+
+  @include up(xl) {
+    font-size: rem(17);
+  }
+}
+
+// Botón de cambio de tema
+.btn-tema {
+  padding: rem(8) rem(16);
+  border: 1px solid $primary;
+  color: $primary;
+  background-color: transparent;
+  font-size: rem(14);
+  line-height: 1.25;
+
+  &:hover {
+    color: $white;
+    background-color: $primary;
+  }
+}

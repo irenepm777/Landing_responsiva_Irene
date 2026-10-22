@@ -1,0 +1,58 @@
+// Se aplica cuando body tiene la clase .dark-mode
+
+@use "index" as *;
+
+body.dark-mode {
+  color: $white;
+  background-color: $dark-bottom;
+
+  background-image: linear-gradient(
+    to bottom,
+    $dark-top 0%,
+    $dark-mid 35%,
+    $dark-low 70%,
+    $dark-bottom 100%
+  );
+
+  // Espuma más tenue
+  &::before {
+    opacity: 0.28;
+  }
+
+  // Navbar
+  .nav-aqua {
+    border-bottom-color: with-alpha($white, 0.12);
+
+    .logo,
+    .nav-link {
+      color: $white;
+    }
+
+    .nav-link:hover {
+      color: $sky;
+    }
+  }
+
+  // Botón hamburguesa de Bootstrap
+  .navbar-toggler {
+    background-color: $sky;
+  }
+
+  // Botón de cambio de tema
+  .btn-tema {
+    border-color: $sky;
+    color: $sky;
+
+    &:hover {
+      color: $ink;
+      background-color: $sky;
+    }
+  }
+
+  // Etiqueta del hero
+  .hero-etiqueta {
+    color: $white;
+    border-color: with-alpha($white, 0.4);
+    background-color: with-alpha($white, 0.08);
+  }
+}

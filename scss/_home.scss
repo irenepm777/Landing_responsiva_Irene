@@ -1,0 +1,114 @@
+@use "index" as *;
+
+// Hero
+.hero {
+  gap: rem(18);
+  padding-top: rem(40);
+
+  @include up(md) {
+    gap: rem(22);
+    padding: rem(64) 0 rem(24);
+  }
+
+  @include up(xl) {
+    gap: rem(26);
+    padding: rem(110) 0 rem(64);
+  }
+
+  h1 {
+    font-size: rem(28);
+    line-height: 1.1;
+
+    @include up(md) {
+      max-width: rem(560);
+      font-size: rem(40);
+    }
+
+    @include up(xl) {
+      max-width: rem(760);
+      font-size: rem(56);
+    }
+  }
+
+  p {
+    line-height: 1.45;
+
+    @include up(md) {
+      max-width: rem(520);
+      font-size: rem(17);
+    }
+
+    @include up(xl) {
+      max-width: rem(600);
+      font-size: rem(18);
+    }
+  }
+}
+
+// Etiqueta superior del hero
+.hero-etiqueta {
+  padding: rem(6) rem(14);
+  border: 1px solid with-alpha($white, 0.32);
+  color: $primary;
+  background-color: with-alpha($white, 0.16);
+
+  @include etiqueta;
+
+  @include up(xl) {
+    font-size: rem(12);
+  }
+}
+
+// Títulos de sección
+.cards h2,
+.discover h2 {
+  @include titulo-seccion;
+}
+
+// Subtítulos
+.subtitulo {
+  margin: 0 0 rem(20);
+  font-size: rem(14);
+  line-height: 1.2;
+
+  @include up(xl) {
+    font-size: rem(16);
+  }
+}
+
+// Sección de zonas
+.cards {
+  padding-top: rem(8);
+
+  @include up(md) {
+    padding-top: rem(40);
+  }
+
+  @include up(xl) {
+    padding-top: rem(48);
+  }
+}
+
+// Efecto zigzag de las tarjetas
+.zona-baja {
+  @include up(md) {
+    margin-top: rem(-110);
+  }
+
+  @include up(xl) {
+    margin-top: rem(-150);
+  }
+}
+
+// Sección de galería
+.discover {
+  padding: 3.5625rem 0 rem(64);
+
+  @include up(md) {
+    padding-top: rem(64);
+  }
+
+  @include up(xl) {
+    padding-top: rem(96);
+  }
+}

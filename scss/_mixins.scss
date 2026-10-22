@@ -1,16 +1,77 @@
-@use "funciones" as f;
+@use "variables" as v;
+@use "functions" as f;
 
-// Estilos comunes para botones
-@mixin boton($fondo, $texto, $vertical, $horizontal) {
-  padding: f.espacio($vertical) f.espacio($horizontal);
-  color: $texto;
-  background-color: $fondo;
-  line-height: 1.25;
-}
-
-// Media queries reutilizables
-@mixin responsive($ancho) {
-  @media (min-width: $ancho) {
+// Media query desde un breakpoint
+@mixin up($name) {
+  @media (min-width: f.bp($name)) {
     @content;
   }
+}
+
+// Botón con estados hover y active
+@mixin boton(
+  $bg,
+  $texto: v.$white,
+  $hover: null,
+  $active: null
+) {
+  color: $texto;
+  background-color: $bg;
+
+  &:hover {
+    color: $texto;
+
+    @if $hover != null {
+      background-color: $hover;
+    } @else {
+      background-color: f.shade($bg, 5%);
+    }
+  }
+
+  &:active {
+    @if $active != null {
+      background-color: $active;
+    } @else {
+      background-color: f.shade($bg, 10%);
+    }
+  }
+}
+
+// Etiquetas del hero y las tarjetas
+@mixin etiqueta {
+  font-size: f.rem(11);
+  line-height: 1.2;
+  letter-spacing: f.rem(0.5);
+}
+
+// Títulos de sección responsive
+@mixin titulo-seccion {
+  margin-bottom: f.rem(20);
+  font-size: f.rem(22);
+
+  @include up(md) {
+    font-size: f.rem(28);
+  }
+
+  @include up(xl) {
+    font-size: f.rem(34);
+  }
+}
+
+// Imágenes de fondo sin repetición
+@mixin imagen-fondo($archivo, $size: cover) {
+  background-image: url("#{v.$img-path}#{$archivo}");
+  background-size: $size;
+  background-repeat: no-repeat;
+}
+
+// Elementos decorativos
+@mixin decoracion($archivo, $size) {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  width: $size;
+  height: $size;
+
+  @include imagen-fondo($archivo, contain);
 }

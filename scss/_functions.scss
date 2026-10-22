@@ -1,0 +1,33 @@
+@use "sass:math";
+@use "sass:map";
+@use "sass:color";
+@use "variables" as v;
+
+// Convierte píxeles a rem
+@function rem($px, $base: 16) {
+  @return math.div($px, $base) * 1rem;
+}
+
+// Obtiene un breakpoint del mapa
+@function bp($name) {
+  @if not map.has-key(v.$breakpoints, $name) {
+    @error "El breakpoint '#{$name}' no existe.";
+  }
+
+  @return map.get(v.$breakpoints, $name);
+}
+
+// Oscurece un color
+@function shade($c, $amount) {
+  @return color.adjust($c, $lightness: -$amount);
+}
+
+// Modifica la transparencia de un color
+@function with-alpha($c, $a) {
+  @return color.change($c, $alpha: $a);
+}
+
+// Mezcla un color con blanco
+@function tint($c, $amount) {
+  @return color.mix($c, v.$white, $amount);
+}

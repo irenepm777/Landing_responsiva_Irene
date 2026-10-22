@@ -1,19 +1,28 @@
-
-// Colores principales
-$color-texto: #08222e;
-$color-primario: #0f5c78;
-$color-hover: #0b4a61;
-$color-active: #083a4d;
-$color-blanco: #ffffff;
-
-// Colores secundarios
-$color-logo: #12506b;
-$color-celeste: #a6dded;
-$color-etiqueta: #e7eef0;
+// Colores
+$white: #ffffff;
+$ink: #08222e;
+$primary: #0f5c78;
+$primary-hover: #0b4a61;
+$primary-active: #083a4d;
+$link: #12506b;
+$sky: #a6dded;
+$etiqueta-bg: #e7eef0;
 
 // Tipografías
-$fuente-titulos: "Quicksand", sans-serif;
-$fuente-texto: "Work Sans", sans-serif;
+$font-body: "Work Sans", sans-serif;
+$font-heading: "Quicksand", sans-serif;
 
-// Espaciado base
-$espaciado-base: 0.25rem;
+// Rutas relativas al CSS compilado
+$img-path: "../img/";
+
+// Breakpoints
+$breakpoints: (
+  md: 768px,
+  xl: 1200px
+);
+
+// Modo oscuro
+$dark-top: #123a52;
+$dark-mid: #0c2b3e;
+$dark-low: #071c28;
+$dark-bottom: #02080b;

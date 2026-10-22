@@ -1,0 +1,49 @@
+@use "index" as *;
+
+.imagen-concha {
+  max-width: rem(277);
+  margin-top: rem(40);
+
+  @include up(md) {
+    max-width: 21.619375rem;
+  }
+
+  @include up(xl) {
+    max-width: 26.8075rem;
+  }
+
+  // Flechas del carrusel como anclas
+  .ancla-flecha {
+    top: 57%;
+    bottom: auto;
+    width: 14.5%;
+    opacity: 1;
+
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+
+  .ancla-anterior {
+    left: -7%;
+
+    img {
+      transform: rotate(90deg);
+    }
+  }
+
+  .ancla-siguiente {
+    right: -7%;
+
+    img {
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+// Fotografía dentro de la concha
+.concha-foto {
+  top: 19.75%;
+  left: 24.75%;
+  width: 50.5%;
+}

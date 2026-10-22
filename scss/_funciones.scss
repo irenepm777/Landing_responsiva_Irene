@@ -1,6 +1,0 @@
-@use "variables" as v;
-
-// Calcula espaciados a partir de una unidad base
-@function espacio($multiplicador) {
-  @return v.$espaciado-base * $multiplicador;
-}

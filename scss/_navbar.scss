@@ -1,0 +1,70 @@
+@use "index" as *;
+
+.nav-aqua {
+  min-height: rem(64);
+  border-bottom: 1px solid with-alpha($ink, 0.08);
+
+  @include up(xl) {
+    min-height: rem(76);
+  }
+
+  // Logotipo
+  .logo {
+    font-size: rem(20);
+    color: $link;
+
+    @include up(xl) {
+      font-size: rem(24);
+    }
+  }
+
+  // Lista de navegación
+  .navbar-nav {
+    @include up(md) {
+      gap: rem(28);
+    }
+
+    @include up(xl) {
+      gap: rem(36);
+    }
+  }
+
+  // Enlaces del menú
+  .nav-link {
+    padding: rem(12) 0;
+    color: $ink;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    @include up(xl) {
+      font-size: rem(16);
+    }
+  }
+
+  // Botón de reserva en el navbar
+  .btn-aqua {
+    margin: rem(8) 0;
+    padding: rem(9) rem(18);
+    font-size: rem(14);
+
+    @include up(md) {
+      margin: 0;
+    }
+
+    @include up(xl) {
+      padding: rem(10) rem(22);
+      font-size: rem(15);
+    }
+  }
+
+  // Botón para cambiar de tema
+  .btn-tema {
+    margin-bottom: rem(12);
+
+    @include up(md) {
+      margin: 0;
+    }
+  }
+}
